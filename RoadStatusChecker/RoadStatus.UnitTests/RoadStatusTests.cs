@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
+using RoadStatus.Repository;
 using RoadStatus.Service;
 using RoadStatus.Service.ViewModels;
 
@@ -46,7 +47,7 @@ namespace RoadStatus.UnitTests
         {
             // Given
             _mockService.Setup(x => x.GetRoadCorridorsAsync("noSuchRoad"))
-                .ThrowsAsync(new RoadNotFoundException());
+                .ThrowsAsync(new NoResultsFoundException());
 
             // When
             var sut = new RoadStatusApp(_mockService.Object, _mockLogger.Object);

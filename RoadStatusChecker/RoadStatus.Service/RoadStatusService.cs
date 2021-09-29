@@ -17,8 +17,6 @@ namespace RoadStatus.Service
         public async Task<IEnumerable<RoadCorridorViewModel>> GetRoadCorridorsAsync(string id)
         {
             var domain = await _roadStatusDomainService.GetRoadCorridorsAsync(id);
-            if (domain == null) throw new RoadNotFoundException();
-
             var mapper = MapperConfig.GetConfiguration().CreateMapper();
             var result = mapper.Map<IEnumerable<RoadCorridorViewModel>>(domain);
             return result;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using RoadStatus.Repository;
 using RoadStatus.Service;
 
 namespace RoadStatus
@@ -39,7 +40,7 @@ namespace RoadStatus
 
                 return ExitCodes.Success;
             }
-            catch (RoadNotFoundException)
+            catch (NoResultsFoundException)
             {
                 _logger.WriteLine($"{id} is not a valid road");
                 return ExitCodes.NotFound;

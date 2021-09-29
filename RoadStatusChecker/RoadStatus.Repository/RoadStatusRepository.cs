@@ -39,7 +39,7 @@ namespace RoadStatus.Repository
                     return result;
 
                 case HttpStatusCode.NotFound:
-                    return null;
+                    throw new NoResultsFoundException();
 
                 default:
                     throw new Exception($"Status code returned: {response.StatusCode}");
