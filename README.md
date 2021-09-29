@@ -13,14 +13,14 @@ Note: you can query multiple roads by providing a comma-separated list (e.g. 'A2
 ### Via Visual Studio
 You can run the command-line tool from Visual Studio:
 * Make RoadStatus the startup project
-* Open the RoadStatus project properties (right-click and select 'Properties'), click the 'Debug' tab on the left and add the road(s) you with to test in the 'Application Arguments' window. 
+* Open the RoadStatus project properties (right-click and select 'Properties'), click the 'Debug' tab on the left and add the road(s) you wish to test in the 'Application Arguments' window. 
 * In the menu, choose Debug --> Start without debugging.
 
 ### From a command-line
 * After building the solution, locate the output bin folder (under bin\debug or bin\release)
 * Open a command-line in that folder and run e.g. RoadStatus.exe A2
 
-## How to run any tests that you have written
+## How to run the unit tests
 In Visual Studio, open Test Explorer and run all tests.
 
 ## Assumptions
