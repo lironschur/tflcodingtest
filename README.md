@@ -35,7 +35,7 @@ You can configure the API key (Ocp-Apim-Subscription-Key) used for the Unified A
 Modify the Ocp-Apim-Subscription-Key in the App.config file (found in the same folder as the executable).
 If the value is left empty, it will not be added to the request header.
 
-## Pointing to another unified API environment
+### Pointing to another unified API environment
 You can modify the base url ('https://api.tfl.gov.uk') used for the API call.
 Modify the BaseUrl value in the App.config file.
 
