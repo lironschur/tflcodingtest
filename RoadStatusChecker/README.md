@@ -25,10 +25,17 @@ In Visual Studio, open Test Explorer and run all tests.
 
 ## Assumptions
 * All roads are alpha-numeric, e.g. A2
-* the Unified API supports multiple values, e.g. A2,A3
+* the Unified API supports an array of comma-separated values, e.g. 'A2,A3'.
 * All status codes besides 200 and 404 are errors.
 
-## Running the tool with various App IDs and API keys
-TODO
+## Overriding settings
 
-•	It should be possible to configure your application to use a different App ID and API key. You should ensure that yours are removed from the source code before you submit it and instructions are included in the readme file as how to change these.
+### Running the tool with different API key
+You can configure the API key (Ocp-Apim-Subscription-Key) used for the Unified API.
+Modify the Ocp-Apim-Subscription-Key in the App.config file (found in the same folder as the executable).
+If the value is left empty, it will not be added to the request header.
+
+## Pointing to another unified API environment
+You can modify the base url ('https://api.tfl.gov.uk') used for the API call.
+Modify the BaseUrl value in the App.config file.
+

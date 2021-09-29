@@ -11,13 +11,24 @@ namespace RoadStatus.Repository
 {
     public class RoadStatusRepository : IRoadStatusRepository
     {
+        private readonly RepositorySettings _settings;
+
+        public RoadStatusRepository(RepositorySettings settings)
+        {
+            _settings = settings;
+        }
         public async Task<IEnumerable<RoadCorridor>> GetRoadCorridorsAsync(string id)
         {
-            var apiUrl = $"https://api.tfl.gov.uk/Road/{id}"; //TestContext.Parameters["ApiUrl"];
+            var apiUrl = $"{_settings.BaseUrl}/Road/{id}";
 
             var url = new Url(new Uri(apiUrl));
 
             using var client = new HttpClient();
+            if (!string.IsNullOrEmpty(_settings.ApiSubscriptionKey))
+            {
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _settings.ApiSubscriptionKey);
+            }
+
             var response = await client.GetAsync(url.ToString());
 
             switch (response.StatusCode)

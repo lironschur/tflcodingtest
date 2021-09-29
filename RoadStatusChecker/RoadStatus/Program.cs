@@ -35,6 +35,7 @@ namespace RoadStatus
             services.AddSingleton<IRoadStatusService, RoadStatusService>();
             services.AddSingleton<IRoadStatusDomainService, RoadStatusDomainService>();
             services.AddSingleton<IRoadStatusRepository, RoadStatusRepository>();
+            services.AddSingleton<RepositorySettings>();
         }
     }
 }
