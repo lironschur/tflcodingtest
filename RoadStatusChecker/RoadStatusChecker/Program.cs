@@ -2,6 +2,9 @@
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using RoadStatusChecker.Domain;
+using RoadStatusChecker.Repository;
+using RoadStatusChecker.Service;
 
 namespace RoadStatusChecker
 {
@@ -29,6 +32,9 @@ namespace RoadStatusChecker
         {
             services.AddSingleton<IConsoleLogger, ConsoleLogger>();
             services.AddSingleton<RoadStatusCheckerApp>();
+            services.AddSingleton<IRoadStatusCheckerService, RoadStatusCheckerService>();
+            services.AddSingleton<IRoadStatusCheckerDomainService, RoadStatusCheckerDomainService>();
+            services.AddSingleton<IRoadStatusCheckerRepository, RoadStatusCheckerRepository>();
         }
     }
 }

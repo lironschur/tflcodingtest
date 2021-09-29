@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatusChecker.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatusChecker.UnitTests", "RoadStatusChecker.UnitTests\RoadStatusChecker.UnitTests.csproj", "{24F80D5A-9EFD-4FCA-8416-5C57531990B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatusChecker.Repository", "RoadStatusChecker.Repository\RoadStatusChecker.Repository.csproj", "{0D95572A-CF31-4F40-A7B2-A29F9134204D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatusChecker.Domain.UnitTests", "RoadStatusChecker.Domain.UnitTests\RoadStatusChecker.Domain.UnitTests.csproj", "{C646C003-FD39-4195-BB06-E4FF161CD263}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{24F80D5A-9EFD-4FCA-8416-5C57531990B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F80D5A-9EFD-4FCA-8416-5C57531990B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F80D5A-9EFD-4FCA-8416-5C57531990B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D95572A-CF31-4F40-A7B2-A29F9134204D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D95572A-CF31-4F40-A7B2-A29F9134204D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D95572A-CF31-4F40-A7B2-A29F9134204D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D95572A-CF31-4F40-A7B2-A29F9134204D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C646C003-FD39-4195-BB06-E4FF161CD263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C646C003-FD39-4195-BB06-E4FF161CD263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C646C003-FD39-4195-BB06-E4FF161CD263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C646C003-FD39-4195-BB06-E4FF161CD263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

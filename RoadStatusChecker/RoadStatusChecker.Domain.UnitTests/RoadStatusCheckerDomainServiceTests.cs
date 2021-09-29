@@ -4,22 +4,23 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
-using RoadStatusChecker.Domain;
 using RoadStatusChecker.Domain.Models;
-using RoadStatusChecker.Service.ViewModels;
+using RoadStatusChecker.Repository;
+using RoadStatusChecker.Repository.Models;
 
-namespace RoadStatusChecker.Service.UnitTests
+namespace RoadStatusChecker.Domain.UnitTests
 {
-    public class RoadStatusCheckerServiceTests
+    public class RoadStatusCheckerDomainServiceTests
     {
-        private readonly Mock<IRoadStatusCheckerDomainService> _mockDomainService = new Mock<IRoadStatusCheckerDomainService>();
+        private readonly Mock<IRoadStatusCheckerRepository> _mockRepo = new Mock<IRoadStatusCheckerRepository>();
+
         [Test]
         public async Task GetRoadCorridorsAsync_ReturnsCorrectResult()
         {
             // Given
-            var domain = new List<RoadCorridorModel>()
+            var repo = new List<RoadCorridor>()
             {
-                new RoadCorridorModel
+                new RoadCorridor
                 {
                     Id = "id1",
                     DisplayName = "displayName",
@@ -28,15 +29,15 @@ namespace RoadStatusChecker.Service.UnitTests
                 }
             };
 
-            _mockDomainService.Setup(x => x.GetRoadCorridorsAsync("id1")).ReturnsAsync(domain);
+            _mockRepo.Setup(x => x.GetRoadCorridorsAsync("id1")).ReturnsAsync(repo);
 
             //When
-            var sut = new RoadStatusCheckerService(_mockDomainService.Object);
+            var sut = new RoadStatusCheckerDomainService(_mockRepo.Object);
             var result = await sut.GetRoadCorridorsAsync("id1");
 
-            var expected = new List<RoadCorridorViewModel>()
+            var expected = new List<RoadCorridorModel>
             {
-                new RoadCorridorViewModel
+                new RoadCorridorModel
                 {
                     Id = "id1",
                     DisplayName = "displayName",
@@ -49,14 +50,13 @@ namespace RoadStatusChecker.Service.UnitTests
             result.Should().BeEquivalentTo(expected);
         }
 
-
         [Test]
         public async Task GetRoadCorridorsAsync_LetsExceptionBubbleThrough()
         {
-            _mockDomainService.Setup(x => x.GetRoadCorridorsAsync("A2")).ThrowsAsync(new Exception("test"));
+            _mockRepo.Setup(x => x.GetRoadCorridorsAsync("A2")).ThrowsAsync(new Exception("test"));
 
             //When
-            var sut = new RoadStatusCheckerService(_mockDomainService.Object);
+            var sut = new RoadStatusCheckerDomainService(_mockRepo.Object);
 
             Func<Task> task = async () =>
             {
