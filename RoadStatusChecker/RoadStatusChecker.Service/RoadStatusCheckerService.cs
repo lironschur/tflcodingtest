@@ -13,9 +13,12 @@ namespace RoadStatusChecker.Service
         {
             _roadStatusCheckerDomainService = roadStatusCheckerDomainService;
         }
+
         public async Task<IEnumerable<RoadCorridorViewModel>> GetRoadCorridorsAsync(string id)
         {
             var domain = await _roadStatusCheckerDomainService.GetRoadCorridorsAsync(id);
+            if (domain == null) throw new RoadNotFoundException();
+
             var mapper = MapperConfig.GetConfiguration().CreateMapper();
             var result = mapper.Map<IEnumerable<RoadCorridorViewModel>>(domain);
             return result;

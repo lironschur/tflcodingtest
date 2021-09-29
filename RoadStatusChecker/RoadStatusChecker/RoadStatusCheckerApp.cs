@@ -39,10 +39,15 @@ namespace RoadStatusChecker
 
                 return ExitCodes.Success;
             }
-            catch (Exception ex)
+            catch (RoadNotFoundException)
             {
                 _logger.WriteLine($"{id} is not a valid road");
                 return ExitCodes.NotFound;
+            }
+            catch (Exception ex)
+            {
+                _logger.WriteLine($"Failure encountered: {ex.Message}");
+                return ExitCodes.Failure;
             }
         }
     }
