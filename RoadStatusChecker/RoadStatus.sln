@@ -11,11 +11,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatus.Service.UnitTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatus.Domain", "RoadStatus.Domain\RoadStatus.Domain.csproj", "{EFF6C1CC-AF80-473D-92BA-61775A9CAE61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatus.UnitTests", "RoadStatus.UnitTests\RoadStatus.UnitTests.csproj", "{24F80D5A-9EFD-4FCA-8416-5C57531990B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatus.UnitTests", "RoadStatus.UnitTests\RoadStatus.UnitTests.csproj", "{24F80D5A-9EFD-4FCA-8416-5C57531990B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatus.Repository", "RoadStatus.Repository\RoadStatus.Repository.csproj", "{0D95572A-CF31-4F40-A7B2-A29F9134204D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatus.Repository", "RoadStatus.Repository\RoadStatus.Repository.csproj", "{0D95572A-CF31-4F40-A7B2-A29F9134204D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatus.Domain.UnitTests", "RoadStatus.Domain.UnitTests\RoadStatus.Domain.UnitTests.csproj", "{C646C003-FD39-4195-BB06-E4FF161CD263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadStatus.Domain.UnitTests", "RoadStatus.Domain.UnitTests\RoadStatus.Domain.UnitTests.csproj", "{C646C003-FD39-4195-BB06-E4FF161CD263}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0337EA92-BC3B-4519-A656-05C5C88A9231}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
